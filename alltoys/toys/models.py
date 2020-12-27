@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class ActiveObjectsManager(models.Model):
+class ActiveobjectsManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(is_active=True)
 
@@ -11,7 +11,8 @@ class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
-    active_object = ActiveObjectsManager()
+
+    active_objects = ActiveobjectsManager()
 
 
 class Toy(models.Model):
