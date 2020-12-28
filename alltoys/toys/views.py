@@ -1,4 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def dashboard(request):
-    return HttpResponse("Welcome to AllToys. fazliddinkomilov")
+from alltoys.toys.models import User, Toy
+
+
+def show_users(request):
+    users = User.objects.all()
+    toys = Toy.objects.all()
+    return render(request, "toys\show_users.html", context={"users": users, "toys": toys})

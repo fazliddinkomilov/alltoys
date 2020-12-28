@@ -18,7 +18,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
-    address = models.OneToOneField(Address, on_delete=models.PROTECT)
+    address = models.OneToOneField(Address, on_delete=models.PROTECT,null=True,blank=True)
 
     objects = models.Manager()
 
