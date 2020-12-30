@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-{{Welcome_text}}
+<div>
+    {{Welcome_text}}
+</div>
+<div>
+    <table>
+        <tr>
+            <td style="width: 100px"><a href="{% url "toys:show_toys" %}">Toys</a></td>
+            <td style="width: 100px"><a href="{% url "toys:show_users" %}">Users</a></td>
+        </tr>
+    </table>
+</div>
+
 </body>
 </html>
